@@ -13,3 +13,5 @@ function Search() {
         </form>
       );
     }
+
+    export default Search;
