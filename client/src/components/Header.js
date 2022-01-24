@@ -1,4 +1,5 @@
 import React from "react";
+import Search from './Search'
 
 
 function Header() {
@@ -7,7 +8,9 @@ function Header() {
             <h1>
                 Flat Reviews 
             </h1>
+            <Search></Search>
         </header>
+        
     )
 }
 

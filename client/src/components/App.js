@@ -2,6 +2,7 @@
 import React from "react"
 import logo from './logo.svg';
 import Header from './Header'
+import ReviewsContainer from './ReviewsContainer'
 
 import './App.css';
 
@@ -10,8 +11,11 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
 
+   
+    <div className="App">
+        <Header></Header>
+        <ReviewsContainer></ReviewsContainer>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
