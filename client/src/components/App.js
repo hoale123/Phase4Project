@@ -3,7 +3,7 @@
 function App() {
   return (
     <div className="App">
-      Hello World part 2 from Hoa branch
+      Hello World from HOA branch
       
     </div>
   );
