@@ -5,12 +5,12 @@ import NewReviewForm from "./NewReviewForm"
 
 
 function  ReviewsContainer(){
-const [cafes, setCafes] = useState([])
+const [restaurant, setRestaurant] = useState([])
 
     useEffect(() => {
-        fetch("")
+        fetch("/restaurant")
         .then((r) => r.json())
-        .then((cafes) => setCafes(cafes));
+        .then((restaurant) => setRestaurant(restaurant));
     }, [])
 
     return(
