@@ -10,27 +10,27 @@ function ReviewCard() {
     return (
         <li className="card">
           <div className="image">
-            <img src={image} alt={description} />
+            <img src alt />
           </div>
           <div className="details">
-            {isFavorited ? (
+           
               <button
-                onClick={() => setIsFavorited(false)}
+                
                 className="emoji-button favorite active"
               >
                 ★
               </button>
-            ) : (
+            
               <button
-                onClick={() => setIsFavorited(true)}
+                
                 className="emoji-button favorite"
               >
                 ☆
               </button>
-            )}
-            <strong>{description}</strong>
-            <span> · {location}</span>
-            <button onClick={handleDelete} className="emoji-button delete">
+            
+            <strong></strong>
+            <span> · </span>
+            <button className="emoji-button delete">
               🗑
             </button>
           </div>

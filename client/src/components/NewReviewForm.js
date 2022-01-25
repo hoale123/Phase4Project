@@ -8,11 +8,16 @@ function NewReviewForm(){
 
 
     return (
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="description">Description:</label>
+        <form >
+          <label htmlFor="name"> Name: </label>
+          <input 
+            type="text"
+            id="name"
+            />
+          <label htmlFor="review">Description:</label>
           <input
             type="text"
-            id="description"
+            id="review"
           />
           <label htmlFor="image">image:</label>
           <input

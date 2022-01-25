@@ -7,7 +7,7 @@ function Search() {
           <input
             type="text"
             id="search"
-            placeholder="search free stuff"
+            placeholder="search for Cafes"
             />
           <button type="submit">🔍</button>
         </form>

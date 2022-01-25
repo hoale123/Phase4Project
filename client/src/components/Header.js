@@ -6,7 +6,7 @@ function Header() {
     return (
         <header>
             <h1>
-                Flat Reviews 
+                Coffee House Reviews 
             </h1>
             <Search></Search>
         </header>
