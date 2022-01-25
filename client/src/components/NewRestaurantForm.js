@@ -1,7 +1,7 @@
 import react from "react"
 
 
-function NewReviewForm(){
+function NewRestaurantForm(){
 
 
 
@@ -34,4 +34,4 @@ function NewReviewForm(){
       );
 }
 
-export default NewReviewForm
+export default NewRestaurantForm

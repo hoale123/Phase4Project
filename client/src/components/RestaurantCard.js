@@ -1,7 +1,7 @@
 import React from "react"
 
 
-function ReviewCard() {
+function RestaurantCard() {
     
 
 
@@ -38,4 +38,4 @@ function ReviewCard() {
       );
 }
 
-export default ReviewCard;
+export default RestaurantCard;

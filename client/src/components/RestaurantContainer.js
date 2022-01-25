@@ -1,10 +1,10 @@
 import React, { useEffect } from "react"
-import ReviewCard from "./ReviewCard"
-import NewReviewForm from "./NewReviewForm"
+import RestaurantCard from "./RestaurantCard"
+import NewRestaurantForm from "./NewRestaurantForm"
 
 
 
-function  ReviewsContainer(){
+function  RestaurantsContainer(){
 const [restaurant, setRestaurant] = useState([])
 
     useEffect(() => {
@@ -15,9 +15,9 @@ const [restaurant, setRestaurant] = useState([])
 
     return(
         <main>
-            <ReviewCard></ReviewCard>
+            <RestaurantCard></RestaurantCard>
         </main>
     )
 }
 
-export default ReviewsContainer
+export default RestaurantsContainer
