@@ -5,3 +5,4 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Restaurant.create(name:"Heater", description:"Very hot!", location:"Atlanta", image:"https://media.istockphoto.com/photos/electric-heater-picture-id506856980")

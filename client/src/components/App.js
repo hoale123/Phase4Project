@@ -1,37 +1,38 @@
 
-import React from "react"
-import logo from './logo.svg';
+import React, { useEffect, useState } from "react";
+// import logo from './logo.svg';
 import Header from './Header'
-import ReviewsContainer from './ReviewsContainer'
+// import ListingsContainer from "./ListingsContainer";
+// import './App.css';
+=======
+// import ReviewsContainer from './ReviewsContainer'
 
-import './App.css';
 
 
 
 
 function App() {
+  const [listings, setListings] = useState([]);
+  const [search, setSearch] = useState("");
+  useEffect(() => {
+    fetch("/restaurants")
+      .then((r) => r.json())
+      .then(setListings);
+  }, []);
+
+  const displayedListings = listings.filter((listing) =>
+    listing.description.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
 
-   
-    <div className="App">
-        <Header></Header>
-        <ReviewsContainer></ReviewsContainer>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-
-      Hello World from HOA branch
+    <div className="app">
+<Header onSearch={setSearch} />
+<ListingsContainer
+        listings={displayedListings}
+        // onRemoveListing={handleRemoveListing}
+      />
+=======
       
 
     </div>
