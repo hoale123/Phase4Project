@@ -3,7 +3,7 @@ import React, {useState} from "react"
 
 function ReviewCard(review) {
   const [favorite, setFavorite] = useState(false)
-
+  const { id, name,  image, description, location } = review;
 
   function handleDeleteClick() {
     fetch(`/reviews/${id}`, {
