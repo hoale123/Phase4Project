@@ -9,6 +9,7 @@ function  ReviewsContainer(){
 
     const [review, setReview] = useState([]);
     const [search, setSearch] = useState("")
+    const [sortBy, setSortBy] = useState("id")
 
     useEffect(() =>{
         fetch("/restaurants")
@@ -16,6 +17,27 @@ function  ReviewsContainer(){
         .then(setReview);
     }, []);
 
+
+
+
+    const reviewsCards = review
+    .filter((review) =>
+      listing.description.toLowerCase().includes(search.toLowerCase())
+    )
+    .sort((reviewA, reviewB) => {
+      if (sortBy === "id") {
+        return reviewA.id - reviewB.id;
+      } else {
+        return reviewA.location.localeCompare(reviewB.location);
+      }
+    })
+    .map((reviewObj) => (
+      <ReviewCard
+        key={reviewObj.id}
+        listing={reviewObj}
+        onDeleteListing={handleDeleteListing}
+      />
+      ));
     return(
         <main>
             <Header
