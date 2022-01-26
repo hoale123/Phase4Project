@@ -14,13 +14,13 @@ function  ReviewsContainer(){
     useEffect(() =>{
         fetch("/restaurants")
         .then((r) => r.json())
-        .then(setReview);
+        .then((review) => setReview(review));
     }, []);
 
 
 
 
-    const reviewsCards = review
+    const ReviewCard = review
     .filter((review) =>
       listing.description.toLowerCase().includes(search.toLowerCase())
     )
