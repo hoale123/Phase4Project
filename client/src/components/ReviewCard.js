@@ -1,7 +1,7 @@
-import React from "react"
+import React, {useState} from "react"
 
 
-function ReviewCard() {
+function ReviewCard(review) {
   const [favorite, setFavorite] = useState(false)
 
 
@@ -19,6 +19,7 @@ function ReviewCard() {
           <div className="image">
             <img src={image} alt={description} />
           </div>
+          <div name={name}/>
           <div className="details">
             {isFavorited ? (
               <button
