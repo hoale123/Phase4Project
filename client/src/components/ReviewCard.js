@@ -2,6 +2,18 @@ import React from "react"
 
 
 function ReviewCard() {
+  const [favorite, setFavorite] = useState(false)
+
+
+  function handleDeleteClick() {
+    fetch(`/reviews/${id}`, {
+      method: "DELETE",
+    });
+    onRemoveListing(id);
+  }
+
+
+
     return (
         <li className="card">
           <div className="image">
@@ -25,7 +37,7 @@ function ReviewCard() {
             )}
             <strong>{description}</strong>
             <span> · {location}</span>
-            <button onClick={handleDelete} className="emoji-button delete">
+            <button onClick={handleDeleteClick} className="emoji-button delete">
               🗑
             </button>
           </div>
