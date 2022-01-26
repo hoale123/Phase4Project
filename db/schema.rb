@@ -33,7 +33,14 @@ ActiveRecord::Schema.define(version: 2022_01_25_225624) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "reviews" force: :cascade do |t|
+    t.string :review
+    t.string :name
+    t.string :image
+    t.string :location
+  end
+
   add_foreign_key "reviews", "user"
-  add_foreign_key "reviews", "restaurant"
+  
 
 end
