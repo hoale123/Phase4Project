@@ -1,4 +1,4 @@
-import ListingsContainer from "./ListingsContainer";
+// import ListingsContainer from "./ListingsContainer";
 import Profile from "./Profile";
 import { Switch, Route } from "react-router-dom";
 
@@ -16,7 +16,7 @@ function Main({ user, setUser }) {
       <Switch>
         <Route exact path="/">
       <h1>{user.username}'s YELPPY</h1>
-          <ListingsContainer user={user} />
+          {/* <ListingsContainer user={user} /> */}
         </Route>
 
         <Route exact path="/profile-edit">
