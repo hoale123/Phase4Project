@@ -23,14 +23,14 @@ function ReviewCard(review) {
           <div className="details">
             {isFavorited ? (
               <button
-                onClick={() => setIsFavorited(false)}
+                onClick={() => setFavorite(false)}
                 className="emoji-button favorite active"
               >
                 ★
               </button>
             ) : (
               <button
-                onClick={() => setIsFavorited(true)}
+                onClick={() => setFavorite(true)}
                 className="emoji-button favorite"
               >
                 ☆
