@@ -1,39 +1,27 @@
 
 import React, { useEffect, useState } from "react";
-// import logo from './logo.svg';
-import Header from './Header'
-// import ListingsContainer from "./ListingsContainer";
-// import './App.css';
-=======
 // import ReviewsContainer from './ReviewsContainer'
-
-
-
-
+import TitleHeader from "./TitleHeader";
+import Homepage from "./Homepage";
 
 function App() {
-  const [listings, setListings] = useState([]);
-  const [search, setSearch] = useState("");
+  const [user, setUser] = useState(null);
   useEffect(() => {
-    fetch("/restaurants")
-      .then((r) => r.json())
-      .then(setListings);
+    // auto-login
+    fetch("/me").then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setUser(user));
+      }
+    });
   }, []);
 
-  const displayedListings = listings.filter((listing) =>
-    listing.description.toLowerCase().includes(search.toLowerCase())
-  );
+
 
   return (
 
     <div className="app">
-<Header onSearch={setSearch} />
-<ListingsContainer
-        listings={displayedListings}
-        // onRemoveListing={handleRemoveListing}
-      />
-=======
-      
+      <TitleHeader user={user} />
+      <Homepage user={user} setUser={setUser} />
 
     </div>
   );

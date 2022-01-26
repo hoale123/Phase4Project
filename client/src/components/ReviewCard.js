@@ -2,11 +2,6 @@ import React from "react"
 
 
 function ReviewCard() {
-    
-
-
-
-
     return (
         <li className="card">
           <div className="image">

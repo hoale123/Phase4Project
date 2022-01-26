@@ -2,11 +2,6 @@ import react from "react"
 
 
 function NewReviewForm(){
-
-
-
-
-
     return (
         <form onSubmit={handleSubmit}>
           <label htmlFor="description">Description:</label>
