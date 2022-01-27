@@ -53,9 +53,19 @@ function NavBar({ user, setUser }) {
             </Menu.Header>
           </Menu.Item>
         ) : null}
-
+        <Menu.Item>
+          <NavLink
+            strict
+            to="/"
+            style={{ color: "grey" }}
+            activeStyle={{ fontWeight: "bold", color: "black" }}
+          >
+           Home
+          </NavLink>
+        </Menu.Item>
       </Menu>
     </>
+
   );
 }
 
