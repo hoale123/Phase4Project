@@ -1,22 +1,26 @@
 class RestaurantsController < ApplicationController
+    skip_before_action :authorize
 
     def index
         restaurants = Restaurant.all
         render json: restaurants, status: :ok
     end
+    def show
+        restaurants = find_restaurant
+        render json: restaurants, status: :ok
+      end
+    
 
     def destroy
         restaurant = find_restaurant
-    restaurant.destroy
+        restaurant.destroy
+        head :no_content
     end
 
     def create
         restaurant = Restaurant.create!(restaurant_params)
         render json: restaurant , status: 201
     end 
-
-    def
-    end
 
 
     private 

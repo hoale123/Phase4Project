@@ -11,11 +11,11 @@ function  ReviewsContainer(){
     const [search, setSearch] = useState("")
     const [sortBy, setSortBy] = useState("id")
 
-    useEffect(() =>{
-        fetch("/restaurants")
-        .then((r) => r.json())
-        .then((review) => setReview(review));
-    }, []);
+    // useEffect(() =>{
+    //     fetch("/restaurants")
+    //     .then((r) => r.json())
+    //     .then((review) => setReview(review));
+    // }, []);
 
 
 

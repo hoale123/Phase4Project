@@ -1,7 +1,7 @@
 // import ListingsContainer from "./ListingsContainer";
 import Profile from "./Profile";
 import { Switch, Route } from "react-router-dom";
-
+import RestaurantContainer from "./RestaurantContainer";
 function Main({ user, setUser }) {
   return (
     <div
@@ -16,7 +16,7 @@ function Main({ user, setUser }) {
       <Switch>
         <Route exact path="/">
       <h1>{user.username}'s YELPPY</h1>
-          {/* <ListingsContainer user={user} /> */}
+          <RestaurantContainer />
         </Route>
 
         <Route exact path="/profile-edit">
