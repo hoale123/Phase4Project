@@ -16,14 +16,7 @@ function RestaurantContainer() {
         setRestaurants((restaurants) => [...restaurants, addedRestaurant]);
     }
   
-    // function handleUpdateRestaurant(updatedRestaurant) {
-    //     setRestaurants((restaurants) =>
-    //     restaurants.map((restaurant) => {
-    //       return restaurant.id === updatedRestaurant.id ? updatedRestaurant : spice;
-    //     })
-    //   );
-    // }
-    // restaurants 
+ 
     function handleDeleteRestaurant(deletedRestaurant) {
         setRestaurants((restaurants) =>
         restaurants.filter((restaurant) => restaurant.id !== deletedRestaurant.id)
@@ -32,14 +25,13 @@ function RestaurantContainer() {
   return(
     <>
       <main>
-        <NewRestaurantForm onAddSpice={handleAddRestaurants} />
-        <section className="spice-list">
+        <NewRestaurantForm onAdd={handleAddRestaurants} />
+        <section className="restaurant-list">
           {restaurants.map((restaurant) => (
             <RestaurantCard
               key={restaurant.id}
               restaurant={restaurant}
-            //   onUpdateSpice={handleUpdateSpice}
-              onDeleteSpice={handleDeleteRestaurant}
+            onDeleteRestaurant={handleDeleteRestaurant}
             />
           ))}
         </section>

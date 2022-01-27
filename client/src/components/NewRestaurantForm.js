@@ -7,7 +7,7 @@ const initialState = {
   description: "",
 };
 
-function NewRestaurantForm({ onAddSpice }) {
+function NewRestaurantForm({ onAdd }) {
   const [formData, setFormData] = useState(initialState);
 
   function handleChange(e) {
@@ -27,9 +27,9 @@ function NewRestaurantForm({ onAddSpice }) {
       body: JSON.stringify(formData),
     })
       .then((r) => r.json())
-      .then((newSpice) => {
+      .then((newRestaurant) => {
         setFormData(initialState);
-        onAddSpice(newSpice);
+        onAdd(newRestaurant);
       });
   }
 
@@ -64,14 +64,6 @@ function NewRestaurantForm({ onAddSpice }) {
           value={formData.description}
           onChange={handleChange}
         />
-        {/* <label htmlFor="rating">Rating: </label>
-        <input
-          type="number"
-          id="rating"
-          max="5"
-          value={formData.rating}
-          onChange={handleChange}
-        /> */}
         <button type="submit">Submit</button>
       </form>
     </div>

@@ -1,26 +1,13 @@
 
-function RestaurantCard({ restaurant, onUpdateSpice, onDeleteSpice }) {
+function RestaurantCard({ restaurant, onDeleteRestaurant }) {
   const { id, image, name, description,location } = restaurant;
 
-  // function handleUpdateRating(pct) {
-  //   const newRating = pct * 5;
-  //   fetch(`/spices/${id}`, {
-  //     method: "PATCH",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({ rating: newRating }),
-  //   })
-  //     .then((r) => r.json())
-  //     .then(onUpdateSpice);
-  // }
-
-  function handleDeleteSpice() {
+  function handleDeleteRestaurant() {
     fetch(`/restaurants/${id}`, {
       method: "DELETE",
     }).then((r) => {
       if (r.ok) {
-        onDeleteSpice(restaurant);
+        onDeleteRestaurant(restaurant);
       }
     });
   }
@@ -34,12 +21,8 @@ function RestaurantCard({ restaurant, onUpdateSpice, onDeleteSpice }) {
         <p>
           Location: <em>{location}</em>
         </p>
-        {/* <div>
-          Rating:{" "}
-          <StarRating percentage={rating / 5} onClick={handleUpdateRating} />
-        </div> */}
         <p>
-          <button onClick={handleDeleteSpice}>Delete Restaurant</button>
+          <button onClick={handleDeleteRestaurant}>Delete Restaurant</button>
         </p>
       </div>
     </div>
